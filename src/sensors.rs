@@ -44,8 +44,6 @@ struct SensorBase {
 mod tests {
     use crate::sensors::*;
 
-    use super::*;
-
     #[test]
     fn deserialize_light_sensor() -> Result<(), serde_json::Error> {
         let json = "{\"SensorName\":\"LightSensor\",\"Timestamp\":1677023344081,\"Light\":\"17\",\"payload\":\"\"}";
