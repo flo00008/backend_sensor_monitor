@@ -8,6 +8,9 @@ pub fn get_sensor_routes(
 ) -> impl Filter<Extract = impl warp::Reply, Error = warp::Rejection> + Clone {
     warp::path!("lightsensor")
         .or(warp::path!("accelerometer"))
+        .or(warp::path!("geolocation"))
+        .or(warp::path!("orientation"))
+        .or(warp::path!("proximity"))
         .and(warp::get()) // The `ws()` filter will prepare the Websocket handshake.
         .and(warp::ws())
         .and(with_db(db))

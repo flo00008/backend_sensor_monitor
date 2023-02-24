@@ -46,6 +46,9 @@ impl DbClient {
         let collection_name = match sensor {
             SensorType::LightSensor(_) => "light_sensor_data",
             SensorType::AccelerometerSensor(_) => "accelerometer_sensor_data",
+            SensorType::GeolocationSensor(_) => "geolocation_sensor_data",
+            SensorType::OrientationSensor(_) => "orientation_sensor_data",
+            SensorType::ProximitySensor(_) => "proximity_sensor_data",
         };
 
         self.client
